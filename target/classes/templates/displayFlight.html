@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display Flight</title>
+</head>
+<body>
+<h2>Display Flight</h2><br>
+<table border="1">
+    <tr>
+        <td>Airlines  </td>
+        <td>Departure City  </td>
+        <td>Arrival City  </td>
+        <td>Date of Departure  </td>
+        <td>Departure time  </td>
+    </tr>
+    <!--/*@thymesVar id="flights" type=""*/-->
+    <tr th:each="flight:${flights}">
+        <td th:text="${flight.operatingAirlines}"></td>
+        <td th:text="${flight.departureCity}"></td>
+        <td th:text="${flight.arrivalCity}"></td>
+        <td th:text="${flight.dateOfDeparture}"></td>
+        <td th:text="${flight.estimatedDepartureTime}"></td>
+        <td ><a th:href="@{'/reservation/'+${flight.id}}">Select</a></td>
+    </tr>
+</table>
+
+
+
+
+
+<a href="../flight/searchFlight"> <h5><---Back </h5></a>
+
+</body>
+</html>

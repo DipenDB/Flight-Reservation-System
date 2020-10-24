@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Reservation Detail</title>
+</head>
+<body>
+
+<blockquote>
+    <h1><p align="center">Reservation Details</p></h1><br>
+
+    <h3><p align="left">Flight Detail</p></h3><br>
+    Flight Number  		:  ${reservation.flight.flightNumber}<br>
+    Operating Airlines  :  ${reservation.flight.operatingAirlines}<br>
+    Departure City      :  ${reservation.flight.departureCity}<br>
+    Arrival City        :  ${reservation.flight.arrivalCity}<br>
+    Estimated Departure Time  :  ${reservation.flight.estimatedDepartureTime}<br>
+
+    <h3><p align="left">Passenger Detail</p></h3><br>
+    First Name  : ${reservation.passenger.firstName}<br>
+    Middle Name : ${reservation.passenger.middleName}<br>
+    Last Name   : ${reservation.passenger.lastname}<br>
+    Email       : ${reservation.passenger.email}<br>
+    Phone	    : ${reservation.passenger.phone}<br>
+
+</blockquote>
+<form action="completeReservationCheckin", method="post">
+	<pre>
+		Enter Number of bags you want to check in : <input type="text" name="numberOfBags">
+		<input type="hidden" value="${reservation.id}" name="reservationId">
+		<input type="submit" value="Check In">
+	</pre>
+</form>
+
+
+</body>
+</html>
